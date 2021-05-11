@@ -62,7 +62,7 @@
         </Grid>
 
         <Grid Grid.Row="1" x:Name="PanelCuentas"  Visibility="Collapsed" >
-           
+
             <Button x:Name="Guest" VerticalAlignment="Center" HorizontalAlignment="Left"  Padding="80" Background="Transparent"  >
                 <Grid>
                     <Image Source="Assets\Image\MenuInicio\boton.png"  Height="100" Width="200" Stretch="Fill"    />
@@ -85,8 +85,10 @@
             </Button>
         </Grid>
 
-    <Grid>
-        <Button Content="Armeria Provisional" Margin="0,467,0,0" VerticalAlignment="Top" Click="Button_Click" HorizontalAlignment="Center"/>
+        <Grid>
+            <Button Content="Armeria Provisional" Margin="0,467,0,0" VerticalAlignment="Top" Click="Button_Click" HorizontalAlignment="Center"/>
 
+        </Grid>
     </Grid>
+
 </Page>

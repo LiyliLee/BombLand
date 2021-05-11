@@ -17,26 +17,26 @@
             <RowDefinition  Height="1*"/>
             <RowDefinition  Height="4*"/>
         </Grid.RowDefinitions>
-        <Image  Grid.ColumnSpan="2"   Source="Assets\Image\Mision\barra.png"  Stretch="Fill"/>
+        <Image  Grid.ColumnSpan="2"   Source="Assets\Image\MMision\barra.png"  Stretch="Fill"/>
 
         <Grid x:Name="BarraInfo" Grid.ColumnSpan="2"  VerticalAlignment="Center" >
             <Button x:Name="MisionVolver"  Background="Transparent" Margin="40,0,0,0">
-                <Image Source="Assets\Image\Mision\botonvolver.png" Height="70" Width="100" Stretch="Fill"/>
+                <Image Source="Assets\Image\MMision\botonvolver.png" Height="70" Width="100" Stretch="Fill"/>
             </Button>
-            <Image Source="Assets\Image\MenuPrincipal\coins.png"  Width="500" Margin="300,0,50,0"/>
+            <Image Source="Assets\Image\MPrincipal\coins.png"  Width="500" Margin="300,0,50,0"/>
             <TextBlock x:Name="Coins" Text="2.601"  FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="480,40,0,0"/>
             <TextBlock x:Name="Diamonds" Text="300" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="720,40,0,0"/>
 
         </Grid>
 
         <Grid  x:Name="BotonMision" Grid.Row="1" Margin="10">
-            <Image Source="Assets\Image\Mision\fondo.png" Stretch="Fill" />
+            <Image Source="Assets\Image\MMision\fondo.png" Stretch="Fill" />
 
             <Button x:Name="Mision"  VerticalAlignment="Top" Background="Transparent">
-                <Image Source="Assets\Image\Mision\misionb.png" />
+                <Image Source="Assets\Image\MMision\misionb.png" />
             </Button>
             <Button x:Name="Growing"  Background="Transparent" >
-                <Image Source="Assets\Image\Mision\growingb.png" />
+                <Image Source="Assets\Image\MMision\growingb.png" />
             </Button>
         </Grid>
 
