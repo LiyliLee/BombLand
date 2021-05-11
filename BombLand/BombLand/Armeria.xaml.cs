@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -11,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -26,5 +28,21 @@ namespace BombLand
         {
             this.InitializeComponent();
         }
+
+        public ObservableCollection<VMArma> ListaArmas {
+            get;
+        } = new ObservableCollection<VMArma>();
+
+        protected override void OnNavigatedTo(NavigationEventArgs e) {
+
+            if (ListaArmas != null) //Carga la lista de ModelView
+                foreach (Arma arma in Model.GetAllArmas()) {
+                    VMArma VMitem = new VMArma(arma);
+                    ListaArmas.Add(VMitem);
+                }
+
+            base.OnNavigatedTo(e);
+        }
+
     }
 }
