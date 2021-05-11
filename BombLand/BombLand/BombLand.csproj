@@ -157,6 +157,10 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Image\MenuInicio\account.png" />
+    <Content Include="Assets\Image\MenuInicio\BombLand.png" />
+    <Content Include="Assets\Image\MenuInicio\credits.png" />
+    <Content Include="Assets\Image\MenuInicio\InicioF.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
