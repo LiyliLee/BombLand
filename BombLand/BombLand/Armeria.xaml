@@ -8,7 +8,52 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <DataTemplate x:Key="GridViewItemTemplate"
+                      x:DataType="local:VMArma">
+            <Grid Height="300" Width="300" Margin="8">
+                <Image x:Name="armaImage" Source="{x:Bind ImgDesequipada}" Stretch="Uniform"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    
     <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <RelativePanel Grid.Row="1" Grid.Column="1">
+            <GridView Margin="0,0,0,8"
+                RelativePanel.AlignLeftWithPanel="True"
+                      RelativePanel.AlignRightWithPanel="True"
+                    ItemsSource="{x:Bind ListaArmas}"
+                    ItemTemplate="{StaticResource GridViewItemTemplate}"/>
+        </RelativePanel>
+        
+
+        <!--<SplitView x:Name="ArmeriaView" Grid.Row="1" IsPaneOpen="True" PanePlacement="Right" 
+                   OpenPaneLength="1000">
+            <SplitView.Pane>
+                <GridView
+                    ItemsSource="{x:Bind ListaArmas}"
+                    ItemTemplate="{StaticResource GridViewItemTemplate}"/>
+            </SplitView.Pane>
+            
+            --><!--<Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                
+            </Grid>--><!--
+        </SplitView>-->
+        
     </Grid>
 </Page>

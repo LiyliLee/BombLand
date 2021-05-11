@@ -137,6 +137,7 @@
     <Compile Include="Mision.xaml.cs">
       <DependentUpon>Mision.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model.cs" />
     <Compile Include="Perfil.xaml.cs">
       <DependentUpon>Perfil.xaml</DependentUpon>
     </Compile>
@@ -150,6 +151,7 @@
     <Compile Include="Tienda.xaml.cs">
       <DependentUpon>Tienda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -157,6 +159,27 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\armeria\Blood Star focus.png" />
+    <Content Include="Assets\armeria\Blood Star selected.png" />
+    <Content Include="Assets\armeria\Blood Star unselected.png" />
+    <Content Include="Assets\armeria\Cyclone focus.png" />
+    <Content Include="Assets\armeria\Cyclone selected.png" />
+    <Content Include="Assets\armeria\Cyclone unselected.png" />
+    <Content Include="Assets\armeria\Laser Gun focus.png" />
+    <Content Include="Assets\armeria\Laser Gun selected.png" />
+    <Content Include="Assets\armeria\Laser Gun unselected.png" />
+    <Content Include="Assets\armeria\Medkit focus.png" />
+    <Content Include="Assets\armeria\Medkit selected.png" />
+    <Content Include="Assets\armeria\Medkit unselected.png" />
+    <Content Include="Assets\armeria\Mortar focus.png" />
+    <Content Include="Assets\armeria\Mortar selected.png" />
+    <Content Include="Assets\armeria\Mortar unselected.png" />
+    <Content Include="Assets\armeria\RiotGun focus.png" />
+    <Content Include="Assets\armeria\RiotGun selected.png" />
+    <Content Include="Assets\armeria\RiotGun unselected.png" />
+    <Content Include="Assets\armeria\Ultra Urn focus.png" />
+    <Content Include="Assets\armeria\Ultra Urn unselected.png" />
+    <Content Include="Assets\armeria\UltraUrn selected.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
