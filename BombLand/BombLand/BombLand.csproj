@@ -181,13 +181,15 @@
     <Content Include="Assets\character\HatIcon checked.png" />
     <Content Include="Assets\character\HatIcon.png" />
     <Content Include="Assets\character\NoClothes.png" />
+    <Content Include="Assets\Image\enemigoP.png" />
+    <Content Include="Assets\Image\Juego.png" />
     <Content Include="Assets\Image\MenuInicio\account.png" />
     <Content Include="Assets\Image\MenuInicio\BombLand.png" />
     <Content Include="Assets\Image\MenuInicio\boton.png" />
     <Content Include="Assets\Image\MenuInicio\credits.png" />
     <Content Include="Assets\Image\MenuInicio\Cuadro.png" />
     <Content Include="Assets\Image\MenuInicio\EnterGame.png" />
-	<Content Include="Assets\Image\MenuInicio\InicioFondo.jpg" />
+    <Content Include="Assets\Image\MenuInicio\InicioFondo.jpg" />
     <Content Include="Assets\armeria\Blood Star focus.png" />
     <Content Include="Assets\armeria\Blood Star selected.png" />
     <Content Include="Assets\armeria\Blood Star unselected.png" />
@@ -208,7 +210,7 @@
     <Content Include="Assets\armeria\RiotGun unselected.png" />
     <Content Include="Assets\armeria\Ultra Urn focus.png" />
     <Content Include="Assets\armeria\Ultra Urn unselected.png" />
-    <Content Include="Assets\armeria\UltraUrn selected.png" />  
+    <Content Include="Assets\armeria\UltraUrn selected.png" />
     <Content Include="Assets\Image\MMision\barra.png" />
     <Content Include="Assets\Image\MMision\botonvolver.png" />
     <Content Include="Assets\Image\MMision\fondo.png" />

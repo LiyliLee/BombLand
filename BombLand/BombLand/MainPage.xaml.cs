@@ -30,5 +30,35 @@ namespace BombLand
         private void Button_Click(object sender, RoutedEventArgs e) {
             this.Frame.Navigate(typeof(Armeria));
         }
+
+        private void creditsb_Click(object sender, RoutedEventArgs e)
+        {
+            PanelCredits.Visibility = Visibility.Visible;
+            PanelInicio.Visibility = Visibility.Collapsed;
+        }
+        private void CloseCredits_Click(object sender, RoutedEventArgs e)
+        {
+            PanelCredits.Visibility = Visibility.Collapsed;
+            PanelInicio.Visibility = Visibility.Visible;
+        }
+
+        private void accountb_Click(object sender, RoutedEventArgs e)
+        {
+            PanelCuentas.Visibility = Visibility.Visible;
+            PanelInicio.Visibility = Visibility.Collapsed;
+        }
+
+        private void EnterGame_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MenuPrincipal));
+        }
+
+        private void Guest_Click(object sender, RoutedEventArgs e)
+        {
+            PanelCuentas.Visibility = Visibility.Collapsed;
+            PanelInicio.Visibility = Visibility.Visible;
+        }
+
+
     }
 }

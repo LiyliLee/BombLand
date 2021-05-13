@@ -7,18 +7,19 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition  Height="2*"/>
             <RowDefinition  Height="2*"/>
         </Grid.RowDefinitions>
 
-        <Image Grid.RowSpan="2" Stretch="Fill" x:Name="FondoMI" Source="Assets\Image\MenuInicio\InicioFondo.jpg" />
-        <Image x:Name="Titulo" Stretch="Uniform"  HorizontalAlignment="Center" Source="Assets\Image\MenuInicio\BombLand.png" />
+        <Image Grid.RowSpan="2" Stretch="Fill" Source="Assets\Image\MenuInicio\InicioFondo.jpg" />
+        <Image Stretch="Uniform"  HorizontalAlignment="Center" Source="Assets\Image\MenuInicio\BombLand.png" />
 
-        <Grid  Grid.RowSpan="2" x:Name="PanelInicio" Visibility="Visible">
+        <Grid  Grid.RowSpan="2" x:Name="PanelInicio" Visibility="Visible" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -26,11 +27,11 @@
                 <RowDefinition  Height="1*"/>
                 <RowDefinition  Height="1*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Column="1" Margin="30,20,20,20" VerticalAlignment="Center" x:Name="panelBoton">
-                <Button   x:Name="creditsb" Background="Transparent" >
+            <StackPanel Grid.Column="1" Margin="30,20,20,20"  VerticalAlignment="Center">
+                <Button   x:Name="creditsb" Background="Transparent" Click="creditsb_Click" MaxWidth="150" MinWidth="70" >
                     <Image Source="Assets\Image\MenuInicio\credits.png" />
                 </Button>
-                <Button  x:Name="accountb" Background="Transparent" >
+                <Button  x:Name="accountb" Background="Transparent" Click="accountb_Click" MaxWidth="150" MinWidth="70"  >
                     <Image Source="Assets\Image\MenuInicio\account.png" />
                 </Button>
             </StackPanel>
@@ -40,7 +41,7 @@
                 <ComboBoxItem  Content="Servidor3"/>
             </ComboBox>
 
-            <Button Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" x:Name="EnterGame" Background="Transparent" Margin="20"  >
+            <Button Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" x:Name="EnterGame" Background="Transparent" Margin="20" Click="EnterGame_Click" >
                 <Grid>
                     <Image Source="Assets\Image\MenuInicio\boton.png"  Height="100" Width="350" Stretch="Fill"   />
                     <TextBlock Text="Enter Game" FontSize="50" HorizontalAlignment="Center" Padding="20" FontWeight="ExtraBold" Foreground="OrangeRed"  />
@@ -49,8 +50,8 @@
         </Grid>
         <Grid Grid.RowSpan="2" x:Name="PanelCredits"  Visibility="Collapsed" >
             <Image Source="Assets\Image\MenuInicio\Cuadro.png"  Margin="50"   />
-            <TextBlock x:Name="CreditsText" Text="Credits" Foreground="Beige" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,60,0,0"/>
-            <Button x:Name="CloseCredits" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,100"  >
+            <TextBlock Text="Credits" Foreground="Beige" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,60,0,0"/>
+            <Button x:Name="CloseCredits" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,100" Background="Transparent" Click="CloseCredits_Click" >
                 <Grid>
                     <Image Source="Assets\Image\MenuInicio\boton.png"  Height="100" Width="250" Stretch="Fill"   />
                     <TextBlock Text="Confirm" FontSize="50" HorizontalAlignment="Center"  Padding="20" FontWeight="ExtraBold" Foreground="OrangeRed"  />
@@ -58,19 +59,19 @@
             </Button>
         </Grid>
         <Grid Grid.Row="1" x:Name="PanelCuentas"  Visibility="Collapsed" >
-            <Button x:Name="Guest" VerticalAlignment="Center" HorizontalAlignment="Left"  Padding="80" Background="Transparent"  >
+            <Button  VerticalAlignment="Center" HorizontalAlignment="Left"  Padding="80" Background="Transparent" Click="Guest_Click" >
                 <Grid>
                     <Image Source="Assets\Image\MenuInicio\boton.png"  Height="100" Width="200" Stretch="Fill"    />
                     <TextBlock Text="👤GUEST" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"  FontWeight="ExtraBold"  Foreground="Coral"  />
                 </Grid>
             </Button>
-            <Button x:Name="Facebook" VerticalAlignment="Center" HorizontalAlignment="Center"  Padding="80" Background="Transparent" >
+            <Button  VerticalAlignment="Center" HorizontalAlignment="Center"  Padding="80" Background="Transparent" Click="Guest_Click">
                 <Grid>
                     <Image Source="Assets\Image\MenuInicio\boton.png"  Height="100" Width="250" Stretch="Fill"   />
                     <TextBlock Text="FACEBOOK" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"   FontWeight="ExtraBold" Foreground ="RoyalBlue"  />
                 </Grid>
             </Button>
-            <Button x:Name="Google" VerticalAlignment="Center" HorizontalAlignment="Right"  Padding="80"  Background="Transparent" >
+            <Button  VerticalAlignment="Center" HorizontalAlignment="Right"  Padding="80"  Background="Transparent"  Click="Guest_Click">
                 <Grid>
                     <Image Source="Assets\Image\MenuInicio\boton.png"  Height="100" Width="200" Stretch="Fill"   />
                     <TextBlock Text="GOOGLE" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold" Foreground="HotPink"  />
