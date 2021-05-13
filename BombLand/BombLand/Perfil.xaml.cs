@@ -52,6 +52,7 @@ namespace BombLand
         }
 
         //dimensiones originales de la imagen de personaje: 568x698
+        //solo funcionan las combinaciones de los 3 primeros items porque el profe dijo que no hiciera todas las combinaciones de ropa
         private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             if(sender is GridView gridView) {
                 if(gridView.SelectedItems.Count == 0) {
