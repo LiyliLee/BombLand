@@ -32,7 +32,7 @@
         <Grid  x:Name="BotonMision" Grid.Row="1" Margin="10">
             <Image Source="Assets\Image\MMision\fondo.png" Stretch="Fill" />
 
-            <Button x:Name="Mision"  VerticalAlignment="Top" Background="Transparent">
+            <Button x:Name="Mision1"  VerticalAlignment="Top" Background="Transparent">
                 <Image Source="Assets\Image\MMision\misionb.png" />
             </Button>
             <Button x:Name="Growing"  Background="Transparent" >

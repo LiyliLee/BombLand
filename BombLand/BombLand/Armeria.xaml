@@ -11,13 +11,11 @@
     <Page.Resources>
         <DataTemplate x:Key="GridViewItemTemplate"
                       x:DataType="local:VMArma">
-            <Grid Height="300" Width="300" Margin="8">
-                <Image x:Name="armaImage" Source="{x:Bind ImgDesequipada}" Stretch="Uniform"/>
-            </Grid>
+            <Image x:Name="armaImage" Source="{x:Bind Img}" Width="144" Height="184" Stretch="UniformToFill" />
         </DataTemplate>
     </Page.Resources>
-    
-    <Grid>
+
+    <Grid Background="#FFFDF2D5">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -25,35 +23,36 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        
-        <RelativePanel Grid.Row="1" Grid.Column="1">
+
+        <Image  Grid.ColumnSpan="2"   Source="Assets\Image\MMision\barra.png"  Stretch="Fill"/>
+        <Grid x:Name="BarraInfo" Grid.ColumnSpan="2"  VerticalAlignment="Center" Grid.Row="0">
+            <Button x:Name="ArmeriaVolver"  Background="Transparent" Margin="40,0,0,0" Click="ArmeriaVolver_Click">
+                <Image Source="Assets\Image\MMision\botonvolver.png" Height="70" Width="100" Stretch="Fill"/>
+            </Button>
+            <Image Source="Assets\Image\MPrincipal\coins.png"  Width="500" Margin="300,0,50,0"/>
+            <TextBlock x:Name="Coins" Text="2.601"  FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="480,40,0,0"/>
+            <TextBlock x:Name="Diamonds" Text="300" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="720,40,0,0"/>
+
+        </Grid>
+
+        <!--<RelativePanel Grid.Row="1" Grid.Column="1">
             <GridView Margin="0,0,0,8"
                 RelativePanel.AlignLeftWithPanel="True"
                       RelativePanel.AlignRightWithPanel="True"
                     ItemsSource="{x:Bind ListaArmas}"
                     ItemTemplate="{StaticResource GridViewItemTemplate}"/>
-        </RelativePanel>
-        
+        </RelativePanel>-->
 
-        <!--<SplitView x:Name="ArmeriaView" Grid.Row="1" IsPaneOpen="True" PanePlacement="Right" 
-                   OpenPaneLength="1000">
-            <SplitView.Pane>
-                <GridView
+        <GridView Margin="0,0,0,8" Grid.Row="1" Grid.Column="1"
                     ItemsSource="{x:Bind ListaArmas}"
-                    ItemTemplate="{StaticResource GridViewItemTemplate}"/>
-            </SplitView.Pane>
-            
-            --><!--<Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="500"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                
-            </Grid>--><!--
-        </SplitView>-->
-        
+                    ItemTemplate="{StaticResource GridViewItemTemplate}"
+                  IsItemClickEnabled="True"
+                  ItemClick="GridView_ItemClick"/>
+
+        <Image x:Name="ArmaFocus" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
     </Grid>
 </Page>

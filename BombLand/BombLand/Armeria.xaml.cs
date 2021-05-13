@@ -44,5 +44,18 @@ namespace BombLand
             base.OnNavigatedTo(e);
         }
 
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
+            BitmapImage b = new BitmapImage();
+            Arma g = e.ClickedItem as Arma;
+            b.UriSource = new Uri(ArmaFocus.BaseUri, g.ImgFocus);
+            ArmaFocus.Source = b;
+            
+            
+            
+        }
+
+        private void ArmeriaVolver_Click(object sender, RoutedEventArgs e) {
+            this.Frame.Navigate(typeof(MenuPrincipal));
+        }
     }
 }
