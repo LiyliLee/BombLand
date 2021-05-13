@@ -185,11 +185,9 @@
     <Content Include="Assets\Image\MenuInicio\BombLand.png" />
     <Content Include="Assets\Image\MenuInicio\boton.png" />
     <Content Include="Assets\Image\MenuInicio\credits.png" />
-<<<<<<< Updated upstream
-=======
     <Content Include="Assets\Image\MenuInicio\Cuadro.png" />
     <Content Include="Assets\Image\MenuInicio\EnterGame.png" />
->>>>>>> Stashed changes
+	<Content Include="Assets\Image\MenuInicio\InicioFondo.jpg" />
     <Content Include="Assets\armeria\Blood Star focus.png" />
     <Content Include="Assets\armeria\Blood Star selected.png" />
     <Content Include="Assets\armeria\Blood Star unselected.png" />
@@ -210,19 +208,11 @@
     <Content Include="Assets\armeria\RiotGun unselected.png" />
     <Content Include="Assets\armeria\Ultra Urn focus.png" />
     <Content Include="Assets\armeria\Ultra Urn unselected.png" />
-    <Content Include="Assets\armeria\UltraUrn selected.png" />
-<<<<<<< Updated upstream
-    <Content Include="Assets\Image\MenuInicio\Cuadro.png" />
-    <Content Include="Assets\Image\MenuInicio\EnterGame.png" />
-=======
->>>>>>> Stashed changes
-    <Content Include="Assets\Image\MenuInicio\InicioFondo.jpg" />
+    <Content Include="Assets\armeria\UltraUrn selected.png" />  
     <Content Include="Assets\Image\MMision\barra.png" />
     <Content Include="Assets\Image\MMision\botonvolver.png" />
     <Content Include="Assets\Image\MMision\fondo.png" />
     <Content Include="Assets\Image\MMision\growingb.png" />
-<<<<<<< Updated upstream
-=======
     <Content Include="Assets\Image\MMision\Icons\Acabar.png" />
     <Content Include="Assets\Image\MMision\Icons\Encontrar.png" />
     <Content Include="Assets\Image\MMision\Icons\Ganar.png" />
@@ -233,7 +223,6 @@
     <Content Include="Assets\Image\MMision\Icons\Tiempo.png" />
     <Content Include="Assets\Image\MMision\Icons\Turno.png" />
     <Content Include="Assets\Image\MMision\Icons\Usar.png" />
->>>>>>> Stashed changes
     <Content Include="Assets\Image\MMision\misionb.png" />
     <Content Include="Assets\Image\MPrincipal\character.png" />
     <Content Include="Assets\Image\MPrincipal\close.png" />
@@ -249,10 +238,7 @@
     <Content Include="Assets\Image\MPrincipal\shop .png" />
     <Content Include="Assets\Image\MPrincipal\task.png" />
     <Content Include="Assets\Image\MPrincipal\weapon.png" />
-<<<<<<< Updated upstream
-=======
     <Content Include="Assets\Image\PVE\PVPfondo.png" />
->>>>>>> Stashed changes
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

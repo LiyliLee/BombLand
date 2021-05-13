@@ -8,10 +8,10 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="AliceBlue">
+    <Grid Background="AliceBlue" Margin="16,0,-16,0">
         <Image Source="Assets\Image\PVE\PVPfondo.png" Stretch="Fill" />
         <Button x:Name="lv1"  Width="50" Height="50" Margin="126,391,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="lv2"  Width="50" Height="50" Margin="203,98,0,0" VerticalAlignment="Top"/>s
+        <Button x:Name="lv2"  Width="50" Height="50" Margin="203,98,0,0" VerticalAlignment="Top"/>
         <Grid  x:Name="Retos" Visibility="Collapsed">
             <Image Source="Assets\Image\MenuInicio\Cuadro.png" Stretch="Fill" Margin="100,30,100,30" />
             <Button x:Name="closeLv1"  VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" Margin="0,40,100,0">

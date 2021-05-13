@@ -46,11 +46,8 @@
         <Grid  x:Name="BotonMision" Grid.Row="1" Margin="20">
             <Image Source="Assets\Image\MMision\fondo.png" Stretch="Fill" />
 
-<<<<<<< Updated upstream
-            <Button x:Name="Mision1"  VerticalAlignment="Top" Background="Transparent">
-=======
+
             <Button x:Name="Misionb"  VerticalAlignment="Top" Background="Transparent" Margin="20" >
->>>>>>> Stashed changes
                 <Image Source="Assets\Image\MMision\misionb.png" />
             </Button>
             <Button x:Name="Growingb"  VerticalAlignment="Top" Background="Transparent" Margin="20,150,20,20" >
