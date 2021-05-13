@@ -8,7 +8,51 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="AliceBlue">
+        <Image Source="Assets\Image\PVE\PVPfondo.png" Stretch="Fill" />
+        <Button x:Name="lv1"  Width="50" Height="50" Margin="126,391,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="lv2"  Width="50" Height="50" Margin="203,98,0,0" VerticalAlignment="Top"/>s
+        <Grid  x:Name="Retos" Visibility="Collapsed">
+            <Image Source="Assets\Image\MenuInicio\Cuadro.png" Stretch="Fill" Margin="100,30,100,30" />
+            <Button x:Name="closeLv1"  VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" Margin="0,40,100,0">
+                <Image Source="Assets\Image\MPrincipal\close.png" Width="60"/>
+            </Button>
+            <StackPanel Margin="100,30,100,30" Orientation="Vertical">
+                <TextBlock  Text="Lv 1"  Foreground="Bisque" FontSize="50" Margin="0,20,0,0" FontWeight="ExtraBold" HorizontalAlignment="Center"/>
+                <TextBlock Text="Scoring requirements" FontSize="30" FontWeight="Black" Margin="60,20,0,0" Foreground="DarkGoldenrod"  />
+                <TextBlock Text="💛  Level pass                                                           3pts" FontSize="25" FontWeight="Black" Margin="60,10,0,0" Foreground="DarkGoldenrod" />
+                <TextBlock Text="💛  The HP is greater than 50%                             3pts" FontSize="25" FontWeight="Black" Margin="60,10,0,0" Foreground="DarkGoldenrod" />
+                <TextBlock Text="💛  Use Fire Power                                                   4pts" FontSize="25" FontWeight="Black" Margin="60,10,0,0" Foreground="DarkGoldenrod" />
+                <TextBlock Text="First pass reward" FontSize="30" FontWeight="Black" Margin="60,20,0,0" Foreground="DarkGoldenrod" />
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Assets\Image\MMision\Icons\Encontrar.png"  Width="50" HorizontalAlignment="Left" Margin="100,0,0,0" />
+                    <TextBlock Text="x10" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" Margin="10" />
+                    <Image Source="Assets\Image\MMision\Icons\Usar.png"  Width="60" HorizontalAlignment="Left" Margin="100,0,0,0" />
+                    <TextBlock Text="x2" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" Margin="10" />
+                    <Button  >
+                        <Grid>
+                            <Image Source="Assets\Image\MenuInicio\boton.png" Margin="100,0,0,0"  Width="150" />
+                            <TextBlock Text="Get Rewards" Margin="120,0,0,0" FontSize="15" FontWeight="Bold"  VerticalAlignment="Center" Foreground="Red" />
+                        </Grid>
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="Full score reward" FontSize="30" FontWeight="Black" Margin="60,0,0,0" Foreground="DarkGoldenrod" />
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Assets\Image\MMision\Icons\Personalizar.png"  Width="60" HorizontalAlignment="Left" Margin="100,10,0,0" />
+                    <TextBlock Text="x1" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" Margin="10" />
+                    <Image Source="Assets\Image\MMision\Icons\Usar.png"  Width="60" HorizontalAlignment="Left" Margin="100,10,0,0" />
+                    <TextBlock Text="x5" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" Margin="10" />
+                    <Button  >
+                        <Grid>
+                            <Image Source="Assets\Image\MenuInicio\boton.png" Margin="100,0,0,0"  Width="150" />
+                            <TextBlock Text="Get Rewards" Margin="120,0,0,0" FontSize="15" FontWeight="Bold"  VerticalAlignment="Center"  Foreground="red"/>
+                        </Grid>
+                    </Button>
+                </StackPanel>
 
+
+            </StackPanel>
+        </Grid>
+        
     </Grid>
 </Page>

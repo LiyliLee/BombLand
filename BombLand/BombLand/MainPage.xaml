@@ -26,12 +26,11 @@
                 <RowDefinition  Height="1*"/>
                 <RowDefinition  Height="1*"/>
             </Grid.RowDefinitions>
-
             <StackPanel Grid.Column="1" Margin="30,20,20,20" VerticalAlignment="Center" x:Name="panelBoton">
-                <Button   x:Name="credits" Background="Transparent" >
+                <Button   x:Name="creditsb" Background="Transparent" >
                     <Image Source="Assets\Image\MenuInicio\credits.png" />
                 </Button>
-                <Button  x:Name="account" Background="Transparent" >
+                <Button  x:Name="accountb" Background="Transparent" >
                     <Image Source="Assets\Image\MenuInicio\account.png" />
                 </Button>
             </StackPanel>
@@ -47,9 +46,7 @@
                     <TextBlock Text="Enter Game" FontSize="50" HorizontalAlignment="Center" Padding="20" FontWeight="ExtraBold" Foreground="OrangeRed"  />
                 </Grid>
             </Button>
-
         </Grid>
-
         <Grid Grid.RowSpan="2" x:Name="PanelCredits"  Visibility="Collapsed" >
             <Image Source="Assets\Image\MenuInicio\Cuadro.png"  Margin="50"   />
             <TextBlock x:Name="CreditsText" Text="Credits" Foreground="Beige" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,60,0,0"/>
@@ -60,23 +57,19 @@
                 </Grid>
             </Button>
         </Grid>
-
         <Grid Grid.Row="1" x:Name="PanelCuentas"  Visibility="Collapsed" >
-
             <Button x:Name="Guest" VerticalAlignment="Center" HorizontalAlignment="Left"  Padding="80" Background="Transparent"  >
                 <Grid>
                     <Image Source="Assets\Image\MenuInicio\boton.png"  Height="100" Width="200" Stretch="Fill"    />
                     <TextBlock Text="👤GUEST" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"  FontWeight="ExtraBold"  Foreground="Coral"  />
                 </Grid>
             </Button>
-
             <Button x:Name="Facebook" VerticalAlignment="Center" HorizontalAlignment="Center"  Padding="80" Background="Transparent" >
                 <Grid>
                     <Image Source="Assets\Image\MenuInicio\boton.png"  Height="100" Width="250" Stretch="Fill"   />
                     <TextBlock Text="FACEBOOK" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"   FontWeight="ExtraBold" Foreground ="RoyalBlue"  />
                 </Grid>
             </Button>
-
             <Button x:Name="Google" VerticalAlignment="Center" HorizontalAlignment="Right"  Padding="80"  Background="Transparent" >
                 <Grid>
                     <Image Source="Assets\Image\MenuInicio\boton.png"  Height="100" Width="200" Stretch="Fill"   />
@@ -84,8 +77,12 @@
                 </Grid>
             </Button>
         </Grid>
+<<<<<<< Updated upstream
 
         <!--<Grid>
+=======
+        <Grid>
+>>>>>>> Stashed changes
             <Button Content="Armeria Provisional" Margin="0,467,0,0" VerticalAlignment="Top" Click="Button_Click" HorizontalAlignment="Center"/>
 
         </Grid>-->

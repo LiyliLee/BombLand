@@ -8,6 +8,20 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <DataTemplate x:Key="TareaTemplate"   >
+            <Grid HorizontalAlignment="Center">
+                <Image Source="Assets\Image\MMision\Icons\Ganar.png"  Width="100"/>
+                <TextBlock Text="Win 1 game in PVP Mode" FontSize="40"/>
+                <TextBlock Text="Reward" FontSize="40" Foreground="Goldenrod"/>
+                <Image Source="Assets\Image\MMision\Icons\Usar.png" />
+
+
+            </Grid>
+
+        </DataTemplate>
+    </Page.Resources>
+
     <Grid Background="#FFFDF2D5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -29,15 +43,32 @@
 
         </Grid>
 
-        <Grid  x:Name="BotonMision" Grid.Row="1" Margin="10">
+        <Grid  x:Name="BotonMision" Grid.Row="1" Margin="20">
             <Image Source="Assets\Image\MMision\fondo.png" Stretch="Fill" />
 
+<<<<<<< Updated upstream
             <Button x:Name="Mision1"  VerticalAlignment="Top" Background="Transparent">
+=======
+            <Button x:Name="Misionb"  VerticalAlignment="Top" Background="Transparent" Margin="20" >
+>>>>>>> Stashed changes
                 <Image Source="Assets\Image\MMision\misionb.png" />
             </Button>
-            <Button x:Name="Growing"  Background="Transparent" >
+            <Button x:Name="Growingb"  VerticalAlignment="Top" Background="Transparent" Margin="20,150,20,20" >
                 <Image Source="Assets\Image\MMision\growingb.png" />
             </Button>
+        </Grid >
+
+        <Grid Grid.Row="1" Grid.Column="1" Margin=" 30" Background="#FFE2C696">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition Width="1" />
+            </Grid.ColumnDefinitions>
+            <ListView 
+                  ItemTemplate="{StaticResource TareaTemplate}" >
+                
+            </ListView>
+            
         </Grid>
 
 
