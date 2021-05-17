@@ -25,6 +25,9 @@ namespace BombLand {
             get; set;
         }
 
+        public string ImgDisplay {
+            get; set;
+        }
 
         public estados Estado {
             get; set;

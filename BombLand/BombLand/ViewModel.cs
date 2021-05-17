@@ -17,11 +17,17 @@ namespace BombLand {
             ImgDesequipada = arma.ImgDesequipada;
             ImgFocus = arma.ImgFocus;
             Estado = arma.Estado;
-            if(Estado == estados.Desequipado) {
-                Img = ImgDesequipada;
+            //if(Estado == estados.Desequipado) {
+            //    Img = ImgDesequipada;
+            //}
+            //else if (Estado == estados.Equipado) {
+            //    Img = ImgEquipada;
+            //}
+            if (Estado == estados.Desequipado) {
+                ImgDisplay = ImgDesequipada;
             }
             else if (Estado == estados.Equipado) {
-                Img = ImgEquipada;
+                ImgDisplay = ImgEquipada;
             }
             //Img = new Image();
             //string s = System.IO.Directory.GetCurrentDirectory() + "\\" + arma.ImgDesequipada;

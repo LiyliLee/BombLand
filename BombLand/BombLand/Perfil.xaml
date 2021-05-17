@@ -31,12 +31,16 @@
             <Button x:Name="PerfilVolver"  Background="Transparent" Margin="40,0,0,0" Click="PerfilVolver_Click">
                 <Image Source="Assets\Image\MMision\botonvolver.png" Height="70" Width="100" Stretch="Fill"/>
             </Button>
-            <Image Source="Assets\Image\MPrincipal\coins.png"  Width="500" Margin="300,0,50,0"/>
-            <TextBlock x:Name="Coins" Text="2.601"  FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="480,40,0,0"/>
-            <TextBlock x:Name="Diamonds" Text="300" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="720,40,0,0"/>
+            <RelativePanel Width="500">
+                <Image Source="Assets\Image\MPrincipal\coins.png"  Width="500"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Coins" Text="2.601"  FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="190,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Diamonds" Text="300" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="400,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </RelativePanel>
         </Grid>
-
-        <GridView Margin="0,0,0,8" Grid.Row="1" Grid.Column="1"
+        
+        <Image Source="Assets\character\iconGridBackground.png" Grid.Row="1" Grid.Column="1" 
+               Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <GridView Margin="15,20,10,8" Grid.Row="1" Grid.Column="1"
                     ItemsSource="{x:Bind ListaPrendas}"
                     ItemTemplate="{StaticResource GridViewItemTemplate}"
                   IsItemClickEnabled="True"

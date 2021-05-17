@@ -11,7 +11,7 @@
     <Page.Resources>
         <DataTemplate x:Key="GridViewItemTemplate"
                       x:DataType="local:VMArma">
-            <Image x:Name="armaImage" Source="{x:Bind Img}" Width="144" Height="184" Stretch="UniformToFill" />
+            <Image x:Name="armaImage" Source="{x:Bind ImgDisplay}" Width="144" Height="184" Stretch="UniformToFill" />
         </DataTemplate>
     </Page.Resources>
 
@@ -32,27 +32,24 @@
             <Button x:Name="ArmeriaVolver"  Background="Transparent" Margin="40,0,0,0" Click="ArmeriaVolver_Click">
                 <Image Source="Assets\Image\MMision\botonvolver.png" Height="70" Width="100" Stretch="Fill"/>
             </Button>
-            <Image Source="Assets\Image\MPrincipal\coins.png"  Width="500" Margin="300,0,50,0"/>
-            <TextBlock x:Name="Coins" Text="2.601"  FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="480,40,0,0"/>
-            <TextBlock x:Name="Diamonds" Text="300" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="720,40,0,0"/>
+            <RelativePanel Width="500">
+                <Image Source="Assets\Image\MPrincipal\coins.png"  Width="500"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Coins" Text="2.601"  FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="190,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Diamonds" Text="300" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="400,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </RelativePanel>
 
         </Grid>
 
-        <!--<RelativePanel Grid.Row="1" Grid.Column="1">
-            <GridView Margin="0,0,0,8"
-                RelativePanel.AlignLeftWithPanel="True"
-                      RelativePanel.AlignRightWithPanel="True"
-                    ItemsSource="{x:Bind ListaArmas}"
-                    ItemTemplate="{StaticResource GridViewItemTemplate}"/>
-        </RelativePanel>-->
-
-        <GridView Margin="0,0,0,8" Grid.Row="1" Grid.Column="1"
+        <GridView Grid.Row="1" Grid.Column="1"
                     ItemsSource="{x:Bind ListaArmas}"
                     ItemTemplate="{StaticResource GridViewItemTemplate}"
                   IsItemClickEnabled="True"
-                  ItemClick="GridView_ItemClick"/>
+                  ItemClick="GridView_ItemClick"
+                  SelectionMode="Single"
+                  SelectionChanged="GridView_SelectionChanged"/>
 
-        <Image x:Name="ArmaFocus" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+        <Image x:Name="ArmaFocus" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill"/>
 
     </Grid>
 </Page>

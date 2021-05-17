@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Gaming.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,9 +25,39 @@ namespace BombLand
     /// </summary>
     public sealed partial class Armeria : Page
     {
+        private readonly object myLock = new object();
+        private List<Gamepad> myGamepads = new List<Gamepad>();
+        private Gamepad mainGamepad = null;
+        private GamepadReading reading, prereading;
+        private GamepadVibration vibration;
+
+        public int seleccionado = -1;
         public Armeria()
         {
             this.InitializeComponent();
+
+            Gamepad.GamepadAdded += (object sender, Gamepad e) => {
+                // Check if the just-added gamepad is already in myGamepads; if it isn't, add
+                // it.
+                lock (myLock) {
+                    bool gamepadInList = myGamepads.Contains(e);
+                    if (!gamepadInList) {
+                        myGamepads.Add(e);
+                    }
+                }
+            };
+
+            Gamepad.GamepadRemoved += (object sender, Gamepad e) => {
+                lock (myLock) {
+                    int indexRemoved = myGamepads.IndexOf(e);
+                    if (indexRemoved > -1) {
+                        if (mainGamepad == myGamepads[indexRemoved]) {
+                            mainGamepad = null;
+                        }
+                        myGamepads.RemoveAt(indexRemoved);
+                    }
+                }
+            };
         }
 
         public ObservableCollection<VMArma> ListaArmas {
@@ -44,18 +75,40 @@ namespace BombLand
             base.OnNavigatedTo(e);
         }
 
+
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
+            
             BitmapImage b = new BitmapImage();
             Arma g = e.ClickedItem as Arma;
             b.UriSource = new Uri(ArmaFocus.BaseUri, g.ImgFocus);
             ArmaFocus.Source = b;
+
+            seleccionado = g.Id;
             
-            
-            
+
         }
+
+        
 
         private void ArmeriaVolver_Click(object sender, RoutedEventArgs e) {
             this.Frame.Navigate(typeof(MenuPrincipal));
+        }
+
+        private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            foreach (Arma arma in ListaArmas) {
+                if(seleccionado == ListaArmas[arma.Id].Id) {
+                    //arma.Estado = Arma.estados.Equipado;
+                    ListaArmas[arma.Id].Estado = Arma.estados.Equipado;
+                    ListaArmas[arma.Id].ImgDisplay = arma.ImgEquipada;
+                    //arma.ImgDisplay = arma.ImgEquipada;
+                }
+                else {
+                    //arma.Estado = Arma.estados.Desequipado;
+                    ListaArmas[arma.Id].Estado = Arma.estados.Desequipado;
+                    ListaArmas[arma.Id].ImgDisplay = arma.ImgDesequipada;
+                    //arma.ImgDisplay = arma.ImgDesequipada;
+                }
+            }
         }
     }
 }
