@@ -242,6 +242,11 @@
     <Content Include="Assets\Image\MPrincipal\task.png" />
     <Content Include="Assets\Image\MPrincipal\weapon.png" />
     <Content Include="Assets\Image\PVE\PVPfondo.png" />
+    <Content Include="Assets\Image\PVP\buttonBack.png" />
+    <Content Include="Assets\Image\PVP\character.png" />
+    <Content Include="Assets\Image\PVP\inviteOpen.png" />
+    <Content Include="Assets\Image\PVP\openSlot.png" />
+    <Content Include="Assets\Image\PVP\startButton.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
