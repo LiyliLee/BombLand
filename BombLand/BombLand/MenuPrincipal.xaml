@@ -9,6 +9,29 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid >
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="wideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" MinWindowHeight="600" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="narrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" MinWindowHeight="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="perfilFoto.Stretch" Value="Fill"/>
+                        <Setter Target="NombreUsuario.FontSize" Value="20"/>
+                        <Setter Target="Power.FontSize" Value="20"/>
+                        <Setter Target="nameText.FontSize" Value="20"/>
+                        <Setter Target="NombreCambiado.FontSize" Value="20"/>
+                        <Setter Target="profileText.FontSize" Value="20"/>
+                        <Setter Target="confirmtext.FontSize" Value="20"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="2*"/>
@@ -19,59 +42,140 @@
             <RowDefinition  Height="6*"/>
         </Grid.RowDefinitions>
         <Image Grid.RowSpan="2" Grid.ColumnSpan="3" Stretch="Fill" x:Name="PFondo" Source="Assets\Image\MPrincipal\MPrincipalFondo.jpg" />
-        <Grid Grid.ColumnSpan="2" Name="PanelUsuario" >
-            <Image Source="Assets\Image\MPrincipal\perfilF.png" Opacity="0.4" HorizontalAlignment="Left" Margin="140,0,0,0" Width="300" Height="150"/>
-            <Grid x:Name="Usuario"  >
-
-                <Button x:Name="ImageUsuario" Margin="10" Background="Transparent"  >
+        <Grid Grid.ColumnSpan="2" Name="PanelUsuario"  >
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="1*"/>
+                <RowDefinition  Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.RowSpan="2" x:Name="Usuario" Background="#7F747474"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.7*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="0.2*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.RowSpan="2" x:Name="ImageUsuario"  Background="Transparent" Click="ImageUsuario_Click" >
                     <Grid>
-                        <Image Source="Assets\Image\MPrincipal\Perfil.png"  Stretch="Fill" Width="125" Height="125"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" />
-
+                        <Image Source="Assets\Image\MPrincipal\Perfil.png" x:Name="perfilFoto"  Stretch="Uniform"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" />
                     </Grid>
                 </Button >
-                <TextBlock x:Name="NombreUsuario" Text="AlleriaDor" FontSize="30"  VerticalAlignment="Top"  Margin="170,30,0,0"  Foreground="AliceBlue" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed"/>
-                <TextBlock x:Name="Power" Text="Power: 732" FontSize="25"  VerticalAlignment="Bottom"   Margin="170,0,0,30"  Foreground="Gold" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed"/>
+                <TextBlock Grid.Column="1" x:Name="NombreUsuario"  Text="AlleriaDor" FontSize="30"  VerticalAlignment="Center"  Foreground="AliceBlue"   FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" />
+                <TextBlock Grid.Column="1" Grid.Row="1" x:Name="Power" Text="Power: 732" FontSize="30"  VerticalAlignment="Center"  Foreground="Gold" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed"/>
             </Grid>
-            <TextBlock x:Name="Level" Text="Lv 9" FontSize="20"  Margin="30,155,0,0" FontWeight="ExtraBold"  />
-            <ProgressBar x:Name="Experience" Height="10"  Width="250" Background ="Gray"   Value="30" Margin="90,165,0,0" VerticalAlignment="Top"  HorizontalAlignment="Left" Foreground="#FF00FFB9" />
-
-            <Grid x:Name="MoneyPanel">
-                <Image  Source="Assets\Image\MPrincipal\coins.png" Width="400" Height="100" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-                <TextBlock x:Name="Coins" Text="2.601"  FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="500,30,0,0"/>
-                <TextBlock x:Name="Diamonds" Text="300" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="680,30,0,0"/>
+            <ProgressBar Grid.Row="2"  x:Name="Experience" Height="10"  Width="250" Background ="Gray"   Value="30"  VerticalAlignment="Bottom"  HorizontalAlignment="Center" Foreground="#FF00FFB9" />
+            <TextBlock Grid.Row="2"  x:Name="Level" Text="Lv 9" FontSize="20" HorizontalAlignment="Center" Foreground="WhiteSmoke" VerticalAlignment="Bottom" FontWeight="ExtraBold"  />
+            
+            <Grid x:Name="MoneyPanel" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.6*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.ColumnSpan="4" Source="Assets\Image\MPrincipal\coins.png"  Stretch="Fill" Margin="10,0,10,0"/>
+                <TextBlock x:Name="Coins" Text="2.601"  Grid.Column="1" VerticalAlignment="Center" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" />
+                <TextBlock x:Name="Diamonds" Text="300" Grid.Column="3"  VerticalAlignment="Center" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" />
             </Grid>
         </Grid>
-        <Button x:Name="config" Grid.Column="2" VerticalAlignment="Top" Background="Transparent" Margin="20,10,0,0">
-            <Image Source="Assets\Image\MPrincipal\config.png" Width="50" Height="50" />
-        </Button>
-        <Button x:Name="closeMP" Grid.Column="2" VerticalAlignment="Top" Background="Transparent" Margin="100,10,0,0">
-            <Image Source="Assets\Image\MPrincipal\close.png" Width="50" Height="50" />
-        </Button>
-        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center">
+        <Grid Grid.Column="2" x:Name="configClose" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button  x:Name="config"  VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Right" >
+                <Image Source="Assets\Image\MPrincipal\config.png"   />
+            </Button>
+            <Button  x:Name="closeMP" Grid.Column="1" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Left" Click="closeMP_Click">
+                <Image Source="Assets\Image\MPrincipal\close.png"  />
+            </Button>
+        </Grid>
+        
+        <Grid Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" x:Name="PanelBotones">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
             <Button x:Name="shop" Grid.Column="2"  Background="Transparent">
-                <Image Source="Assets\Image\MPrincipal\shop .png" Width="100" Height="100" />
+                <!--Click="shop_Click" >-->
+                <Image Source="Assets\Image\MPrincipal\shop .png" />
             </Button>
-            <Button x:Name="task" Grid.Column="2"  Background="Transparent">
-                <Image Source="Assets\Image\MPrincipal\task.png" Width="100" Height="100" />
+            <Button Grid.Row="1" x:Name="task"  Background="Transparent" Click="task_Click">
+                <Image Source="Assets\Image\MPrincipal\task.png" />
             </Button>
-            <Button x:Name="forge" Grid.Column="2"  Background="Transparent">
-                <Image Source="Assets\Image\MPrincipal\forge.png" Width="100" Height="100" />
+            <Button Grid.Row="2" x:Name="forge"  Background="Transparent" Click="forge_Click">
+                <Image Source="Assets\Image\MPrincipal\forge.png"/>
             </Button>
-            <Button x:Name="character" Grid.Column="2"  Background="Transparent">
-                <Image Source="Assets\Image\MPrincipal\character.png" Width="100" Height="100" />
+            <Button Grid.Row="3" x:Name="character"  Background="Transparent" Click="character_Click">
+                <Image Source="Assets\Image\MPrincipal\character.png" />
             </Button>
-        </StackPanel>
-        <Grid Grid.Row="1" x:Name="CharacterIdle">
-            <Image x:Name="player" Source="Assets\Image\MPrincipal\player.png" Margin="0,20,100,20" />
-            <Image x:Name="weapons" Source="Assets\Image\MPrincipal\weapon.png" Margin="200,230,10,50" />
         </Grid>
-        <StackPanel  Grid.Row="1" Grid.Column="1" x:Name="PlayModePanel" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center"> 
-            <Button x:Name="PVPMode" Grid.Column="2"  Background="Transparent">
-                <Image Source="Assets\Image\MPrincipal\PVP mode.png" Margin="20,20,20,20"/>
+        <Grid Grid.Row="1" x:Name="CharacterIdle">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.75*" />
+            </Grid.RowDefinitions>
+            <Image Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="player" Source="Assets\Image\MPrincipal\player.png" />
+            <Image Grid.Column="1" Grid.Row="1" x:Name="weapons" Source="Assets\Image\MPrincipal\weapon.png"   />
+        </Grid>
+        <Grid  Grid.Row="1" Grid.Column="1" x:Name="PlayModePanel" HorizontalAlignment="Center" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Button x:Name="PVPMode" Grid.Row="1" Background="Transparent" Click="PVPMode_Click">
+                <Image Source="Assets\Image\MPrincipal\PVP mode.png" Margin="10" />
             </Button>
-            <Button x:Name="PVEMode" Grid.Column="2"  Background="Transparent" >
-                <Image Source="Assets\Image\MPrincipal\PVE mode.png" Margin="20,0,20,20"/>
+            <Button x:Name="PVEMode"  Background="Transparent" Click="PVEMode_Click">
+                <Image Source="Assets\Image\MPrincipal\PVE mode.png" Margin="10" />
             </Button>
-        </StackPanel>
+        </Grid>
+        <Grid Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="50" x:Name="PanelPerfil"  Visibility="Collapsed" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.RowSpan="3" Grid.ColumnSpan="4" Source="Assets\Image\MenuInicio\Cuadro.png"  Stretch="Fill" />
+            <TextBlock  Grid.Row="0" Grid.ColumnSpan="4" x:Name="profileText" Text="Profile" Foreground="Beige" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Image Source="Assets\Image\MPrincipal\Perfil.png"   Stretch="Uniform" Grid.Row="1" Grid.Column="1" Margin="5" />
+            <StackPanel Grid.Row="1" Grid.Column="2">
+                <TextBlock  Text="Name : " x:Name="nameText"  FontSize="40" FontWeight="ExtraBlack" Margin="10" HorizontalAlignment="Center" />
+                <TextBox  Text="" x:Name="NombreCambiado" FontSize="40" Margin="10" />
+            </StackPanel>
+            <Button Grid.Row="2" Grid.ColumnSpan="4" x:Name="CloseProfile" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Background="Transparent" Click="CloseProfile_Click">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1" Source="Assets\Image\MenuInicio\boton.png" VerticalAlignment="Center"  Stretch="Fill"   />
+                    <TextBlock Grid.Column="1" Text="Confirm" x:Name="confirmtext" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" Foreground="OrangeRed"  />
+                </Grid>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

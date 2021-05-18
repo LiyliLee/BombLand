@@ -8,51 +8,134 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="AliceBlue" Margin="16,0,-16,0">
-        <Image Source="Assets\Image\PVE\PVPfondo.png" Stretch="Fill" />
-        <Button x:Name="lv1"  Width="50" Height="50" Margin="126,391,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="lv2"  Width="50" Height="50" Margin="203,98,0,0" VerticalAlignment="Top"/>
-        <Grid  x:Name="Retos" Visibility="Collapsed">
-            <Image Source="Assets\Image\MenuInicio\Cuadro.png" Stretch="Fill" Margin="100,30,100,30" />
-            <Button x:Name="closeLv1"  VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" Margin="0,40,100,0">
+    <Grid >
+        
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="wideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="900" MinWindowHeight="600" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="narrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" MinWindowHeight="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Retos.Margin" Value="0" />
+                        <Setter Target="lv1Text.FontSize" Value="30"/>
+                        <Setter Target="requirText.FontSize" Value="20"/>
+                        <Setter Target="t1.FontSize" Value="15"/>
+                        <Setter Target="t2.FontSize" Value="15"/>
+                        <Setter Target="t3.FontSize" Value="15"/>
+                        
+                        <Setter Target="tt1.FontSize" Value="15"/>
+                        <Setter Target="tt2.FontSize" Value="15"/>
+                        
+                        <Setter Target="t4.FontSize" Value="20"/>
+                        <Setter Target="t5.FontSize" Value="20"/>
+                        <Setter Target="t6.FontSize" Value="20"/>
+                        <Setter Target="t7.FontSize" Value="20"/>
+                        
+                        <Setter Target="t8.FontSize" Value="10"/>
+                        <Setter Target="t9.FontSize" Value="10"/>
+                        
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="0.7*"/>
+            <RowDefinition  Height="0.9*"/>
+            <RowDefinition  Height="2.2*"/>
+            <RowDefinition  Height="0.9*"/>
+            <RowDefinition  Height="1.8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition Width="768*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.RowSpan="5" Grid.ColumnSpan="4" Source="Assets\Image\PVE\PVPfondo.png" Stretch="Fill" />
+        <Button x:Name="PVEVolver"  Background="Gray"   Click="PVEVolver_Click" HorizontalAlignment="Center"  >
+            <Image Source="Assets\Image\MMision\botonvolver.png"  Stretch="Fill" />
+        </Button>
+        <Button x:Name="lv1"  Grid.Column ="1"  Grid.Row="3" Click="lv1_Click" Padding="100" HorizontalAlignment="Center" Background="Transparent" />
+        <Button x:Name="lv2"  Grid.Column="2" Grid.Row="1" Click="lv2_Click" Padding="100" HorizontalAlignment="Center" Background="Transparent" />
+
+        <Grid Grid.ColumnSpan="4" Grid.RowSpan="5" x:Name="Retos" Margin="100,40,100,30" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="57*" />
+                <RowDefinition Height="98*" />
+                <RowDefinition Height="107*" />
+                <RowDefinition Height="23*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.RowSpan="4" Grid.ColumnSpan="3" Source="Assets\Image\MenuInicio\Cuadro.png" Stretch="Fill"  />
+            <Button x:Name="closeLv1" Grid.Column="2" Background="Transparent"  HorizontalAlignment="Right"  Click="closeLv1_Click">
                 <Image Source="Assets\Image\MPrincipal\close.png" Width="60"/>
             </Button>
-            <StackPanel Margin="100,30,100,30" Orientation="Vertical">
-                <TextBlock  Text="Lv 1"  Foreground="Bisque" FontSize="50" Margin="0,20,0,0" FontWeight="ExtraBold" HorizontalAlignment="Center"/>
-                <TextBlock Text="Scoring requirements" FontSize="30" FontWeight="Black" Margin="60,20,0,0" Foreground="DarkGoldenrod"  />
-                <TextBlock Text="💛  Level pass                                                           3pts" FontSize="25" FontWeight="Black" Margin="60,10,0,0" Foreground="DarkGoldenrod" />
-                <TextBlock Text="💛  The HP is greater than 50%                             3pts" FontSize="25" FontWeight="Black" Margin="60,10,0,0" Foreground="DarkGoldenrod" />
-                <TextBlock Text="💛  Use Fire Power                                                   4pts" FontSize="25" FontWeight="Black" Margin="60,10,0,0" Foreground="DarkGoldenrod" />
-                <TextBlock Text="First pass reward" FontSize="30" FontWeight="Black" Margin="60,20,0,0" Foreground="DarkGoldenrod" />
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Assets\Image\MMision\Icons\Encontrar.png"  Width="50" HorizontalAlignment="Left" Margin="100,0,0,0" />
-                    <TextBlock Text="x10" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" Margin="10" />
-                    <Image Source="Assets\Image\MMision\Icons\Usar.png"  Width="60" HorizontalAlignment="Left" Margin="100,0,0,0" />
-                    <TextBlock Text="x2" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" Margin="10" />
-                    <Button  >
-                        <Grid>
-                            <Image Source="Assets\Image\MenuInicio\boton.png" Margin="100,0,0,0"  Width="150" />
-                            <TextBlock Text="Get Rewards" Margin="120,0,0,0" FontSize="15" FontWeight="Bold"  VerticalAlignment="Center" Foreground="Red" />
-                        </Grid>
-                    </Button>
-                </StackPanel>
-                <TextBlock Text="Full score reward" FontSize="30" FontWeight="Black" Margin="60,0,0,0" Foreground="DarkGoldenrod" />
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Assets\Image\MMision\Icons\Personalizar.png"  Width="60" HorizontalAlignment="Left" Margin="100,10,0,0" />
-                    <TextBlock Text="x1" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" Margin="10" />
-                    <Image Source="Assets\Image\MMision\Icons\Usar.png"  Width="60" HorizontalAlignment="Left" Margin="100,10,0,0" />
-                    <TextBlock Text="x5" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" Margin="10" />
-                    <Button  >
-                        <Grid>
-                            <Image Source="Assets\Image\MenuInicio\boton.png" Margin="100,0,0,0"  Width="150" />
-                            <TextBlock Text="Get Rewards" Margin="120,0,0,0" FontSize="15" FontWeight="Bold"  VerticalAlignment="Center"  Foreground="red"/>
-                        </Grid>
-                    </Button>
-                </StackPanel>
-
+            <TextBlock  Grid.Column="1" Text="Lv 1" x:Name="lv1Text" Foreground="Bisque" FontSize="50" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <StackPanel Grid.ColumnSpan="3" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Scoring requirements" FontSize="30" FontWeight="Black" x:Name="requirText" Foreground="DarkGoldenrod"  />
+                <TextBlock x:Name="t1" Text="💛  Level pass                                                           3pts"  FontSize="25" FontWeight="Black" Foreground="DarkGoldenrod" />
+                <TextBlock x:Name="t2" Text="💛  The HP is greater than 50%                             3pts"                FontSize="25" FontWeight="Black"  Foreground="DarkGoldenrod" />
+                <TextBlock x:Name="t3" Text="💛  Use Fire Power                                                   4pts"      FontSize="25" FontWeight="Black" Foreground="DarkGoldenrod" />
 
             </StackPanel>
+
+            <Grid   Grid.ColumnSpan="3" Grid.Row="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="tt1" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="6" Text="First pass reward" FontSize="25" FontWeight="Black"  Foreground="DarkGoldenrod" />
+                <Image Grid.Column="1" Grid.Row="1" Source="Assets\Image\MMision\Icons\Encontrar.png" />
+                <Image Grid.Column="1" Grid.Row="1" Source="Assets\Image\PVE\recibido.png" Visibility="Collapsed"  x:Name="recog01" />
+                <TextBlock x:Name="t4"  Grid.Column="2"  Grid.Row="1" Text="x10" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" />
+                <Image  Grid.Column="3" Grid.Row="1" Source="Assets\Image\MMision\Icons\Usar.png"  />
+                <Image  Grid.Column="3" Grid.Row="1" Source="Assets\Image\PVE\recibido.png" Visibility="Collapsed"  x:Name="recog02"/>
+                <TextBlock x:Name="t5" Grid.Column="4"  Grid.Row="1" Text="x2" VerticalAlignment="Center"  FontSize="30" FontWeight="Black"  />
+                <Button  Grid.Column="5"  Grid.Row="1"  HorizontalAlignment="Center" Background="Transparent"  x:Name="recog0" Click="recog0_Click" >
+                    <Grid>
+                        <Image Source="Assets\Image\MenuInicio\boton.png"  />
+                        <TextBlock Text="Get Rewards" x:Name="t8" FontSize="25" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" />
+                    </Grid>
+                </Button>
+
+                <TextBlock x:Name="tt2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Text="Full score reward" FontSize="25" FontWeight="Black"  Foreground="DarkGoldenrod" />
+                <Image Grid.Column="1" Grid.Row="3" Source="Assets\Image\MMision\Icons\Personalizar.png"/>
+                <Image Grid.Column="1" Grid.Row="3" Source="Assets\Image\PVE\recibido.png" Visibility="Collapsed" x:Name="recog11"/>
+                <TextBlock Grid.Column="2" x:Name="t6"  Grid.Row="3" Text="x1" VerticalAlignment="Center"  FontSize="30" FontWeight="Black" />
+                <Image  Grid.Column="3" Grid.Row="3" Source="Assets\Image\MMision\Icons\Usar.png"  />
+                <Image  Grid.Column="3" Grid.Row="3" Source="Assets\Image\PVE\recibido.png" Visibility="Collapsed"  x:Name="recog12"/>
+                <TextBlock Grid.Column="4" x:Name="t7" Grid.Row="3" Text="x5" VerticalAlignment="Center"  FontSize="30" FontWeight="Black"  />
+                <Button  Grid.Column="5"  Grid.Row="3"  HorizontalAlignment="Center" Background="Transparent" x:Name="recog1" Click="recog1_Click">
+                    <Grid>
+                        <Image Source="Assets\Image\MenuInicio\boton.png"  />
+                        <TextBlock Text="Get Rewards" x:Name="t9" FontSize="25" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" />
+                    </Grid>
+                </Button>
+            </Grid>
+
         </Grid>
-        
+
     </Grid>
 </Page>

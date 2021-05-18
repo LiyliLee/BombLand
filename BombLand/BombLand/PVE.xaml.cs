@@ -22,14 +22,46 @@ namespace BombLand
     /// </summary>
     public sealed partial class PVE : Page
     {
+
         public PVE()
         {
             this.InitializeComponent();
         }
 
-        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+
+        private void lv1_Click(object sender, RoutedEventArgs e)
         {
+            Retos.Visibility = Visibility.Visible;
+        }
+
+        private void lv2_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Juego));
+        }
+
+        private void PVEVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MenuPrincipal));
 
         }
+
+        private void recog1_Click(object sender, RoutedEventArgs e)
+        {
+            recog11.Visibility = Visibility.Visible;
+            recog12.Visibility = Visibility.Visible;
+        }
+
+        private void recog0_Click(object sender, RoutedEventArgs e)
+        {
+            recog01.Visibility = Visibility.Visible;
+            recog02.Visibility = Visibility.Visible;
+        }
+
+        private void closeLv1_Click(object sender, RoutedEventArgs e)
+        {
+            Retos.Visibility = Visibility.Collapsed;
+        }
+
+ 
     }
 }

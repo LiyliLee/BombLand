@@ -247,6 +247,7 @@
     <Content Include="Assets\Image\PVP\inviteOpen.png" />
     <Content Include="Assets\Image\PVP\openSlot.png" />
     <Content Include="Assets\Image\PVP\startButton.png" />
+    <Content Include="Assets\Image\PVE\recibido.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
