@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Gaming.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,9 +23,36 @@ namespace BombLand
     /// </summary>
     public sealed partial class MenuPrincipal : Page
     {
+        private readonly object myLock = new object();
+        private List<Gamepad> myGamepads = new List<Gamepad>();
+        private Gamepad mainGamepad = null;
+
         public MenuPrincipal()
         {
             this.InitializeComponent();
+
+            Gamepad.GamepadAdded += (object sender, Gamepad e) => {
+                // Check if the just-added gamepad is already in myGamepads; if it isn't, add
+                // it.
+                lock (myLock) {
+                    bool gamepadInList = myGamepads.Contains(e);
+                    if (!gamepadInList) {
+                        myGamepads.Add(e);
+                    }
+                }
+            };
+
+            Gamepad.GamepadRemoved += (object sender, Gamepad e) => {
+                lock (myLock) {
+                    int indexRemoved = myGamepads.IndexOf(e);
+                    if (indexRemoved > -1) {
+                        if (mainGamepad == myGamepads[indexRemoved]) {
+                            mainGamepad = null;
+                        }
+                        myGamepads.RemoveAt(indexRemoved);
+                    }
+                }
+            };
         }
 
         private void closeMP_Click(object sender, RoutedEventArgs e)

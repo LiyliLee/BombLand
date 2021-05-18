@@ -34,7 +34,7 @@
         <Image  Grid.ColumnSpan="2"   Source="Assets\Image\MMision\barra.png"  Stretch="Fill"/>
 
         <Grid x:Name="BarraInfo" Grid.ColumnSpan="2"  VerticalAlignment="Center" >
-            <Button x:Name="MisionVolver"  Background="Transparent" Margin="40,0,0,0">
+            <Button x:Name="MisionVolver"  Background="Transparent" Margin="40,0,0,0" Click="MisionVolver_Click">
                 <Image Source="Assets\Image\MMision\botonvolver.png" Height="70" Width="100" Stretch="Fill"/>
             </Button>
             <Image Source="Assets\Image\MPrincipal\coins.png"  Width="500" Margin="300,0,50,0"/>
