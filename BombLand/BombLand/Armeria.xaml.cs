@@ -85,30 +85,20 @@ namespace BombLand
 
             seleccionado = g.Id;
             
+            ListaArmas.Clear();
+            foreach (Arma arma in Model.GetAllArmas()) {
+                VMArma VMitem = new VMArma(arma);
+                if (VMitem.Id == seleccionado) {
+                    VMitem.ImgDisplay = VMitem.ImgEquipada;
+                }
+                ListaArmas.Add(VMitem);
+            }
 
-        }
-
-        
+        }    
 
         private void ArmeriaVolver_Click(object sender, RoutedEventArgs e) {
             this.Frame.Navigate(typeof(MenuPrincipal));
         }
 
-        private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            foreach (Arma arma in ListaArmas) {
-                if(seleccionado == ListaArmas[arma.Id].Id) {
-                    //arma.Estado = Arma.estados.Equipado;
-                    ListaArmas[arma.Id].Estado = Arma.estados.Equipado;
-                    ListaArmas[arma.Id].ImgDisplay = arma.ImgEquipada;
-                    //arma.ImgDisplay = arma.ImgEquipada;
-                }
-                else {
-                    //arma.Estado = Arma.estados.Desequipado;
-                    ListaArmas[arma.Id].Estado = Arma.estados.Desequipado;
-                    ListaArmas[arma.Id].ImgDisplay = arma.ImgDesequipada;
-                    //arma.ImgDisplay = arma.ImgDesequipada;
-                }
-            }
-        }
     }
 }

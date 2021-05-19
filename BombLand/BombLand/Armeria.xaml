@@ -45,8 +45,7 @@
                     ItemTemplate="{StaticResource GridViewItemTemplate}"
                   IsItemClickEnabled="True"
                   ItemClick="GridView_ItemClick"
-                  SelectionMode="Single"
-                  SelectionChanged="GridView_SelectionChanged"/>
+                  />
 
 
         <Image x:Name="ArmaFocus" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill"/>
