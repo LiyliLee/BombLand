@@ -11,54 +11,45 @@
     <Grid>
         <Image Source="Assets/Image/Juego.png" Stretch="Fill"/>
 
-        <Grid>
+        <Grid KeyDown="Grid_KeyDown">
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition  Width="1*"/>
                 <ColumnDefinition Width="1*" />
 
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
 
-            <Button Grid.Column="2" HorizontalAlignment="Center"  x:Name="JugadorIdle"  Background="Transparent" Width="150" Margin="100,80,00,0" >
-                <Grid>
-                    <Image  Source="Assets/Image/MPrincipal/Player.png"  >
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="-90" CenterX="75" CenterY="120"/>
-                        </Image.RenderTransform>
-                    </Image>
-
-                </Grid>
+            <Button Grid.Column="2" HorizontalAlignment="Center"  x:Name="JugadorIdle" Background="Transparent"  Width="170" RenderTransformOrigin="0.5,0.5" >
+                <Button.RenderTransform>
+                    <CompositeTransform Rotation="-90" TranslateX="30" TranslateY="40"/>
+                </Button.RenderTransform>
+                <Image  Source="Assets/Image/MPrincipal/Player.png" />
             </Button>
-            <Button Grid.Column="2" HorizontalAlignment="Left"  x:Name="JugadorArma"  Background="Transparent" Width="150" Margin="60,60,00,0" >
-                <Grid>
-                    <Image  Source="Assets/Image/MPrincipal/weapon.png"  >
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="-130" CenterX="75" CenterY="80"/>
-                        </Image.RenderTransform>
-                    </Image>
+            <Button Grid.Column="2" HorizontalAlignment="Left"  x:Name="JugadorArma" Background="Transparent" Width="150" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <CompositeTransform Rotation="-120" TranslateX="0" TranslateY="30"/>
+                </Button.RenderTransform>
+                <Image  Source="Assets/Image/MPrincipal/weapon.png"   />
 
-                </Grid>
             </Button>
 
-            <Button  HorizontalAlignment="Center"  x:Name="EnemigoIdle" Background="Transparent"  Width="180" Margin="0,100,200,0" >
-                <Grid>
-                    <Image  Source="Assets/Image/enemigoP.png" >
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="90" CenterX="90" CenterY="120"/>
-                        </Image.RenderTransform>
-                    </Image>
-
-                </Grid>
+            <Button  HorizontalAlignment="Center"  x:Name="EnemigoIdle" Background="Transparent"  Width="200" RenderTransformOrigin="0.5,0.5" >
+                <Button.RenderTransform>
+                    <CompositeTransform Rotation="90" TranslateX="-30" TranslateY="40"/>
+                </Button.RenderTransform>
+                <Image  Source="Assets/Image/enemigoP.png" />
             </Button>
-            <Button  HorizontalAlignment="Right"  x:Name="EnemigoArma" Background="Transparent" Width="150" Margin="0,60,60,0">
-                <Grid>
-                    <Image  Source="Assets/Image/MPrincipal/weapon.png"   >
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="10" CenterX="0" CenterY="0"/>
-                        </Image.RenderTransform>
-                    </Image>
+            <Button  HorizontalAlignment="Right"  x:Name="EnemigoArma" Background="Transparent" Width="150" RenderTransformOrigin="0.5,0.5" >
+                <Button.RenderTransform>
+                <CompositeTransform Rotation="20" TranslateX="20" TranslateY="30"/>
+                </Button.RenderTransform>
+                <Image  Source="Assets/Image/MPrincipal/weapon.png"  />
 
-                </Grid>
             </Button>
 
         </Grid>

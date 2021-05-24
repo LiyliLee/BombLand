@@ -31,6 +31,7 @@ namespace BombLand
         private Gamepad mainGamepad = null;
 
         public ObservableCollection<VMTareaMision> ListaTareaMision  { get; set; } = new ObservableCollection<VMTareaMision>();
+        public ObservableCollection<VMTareaGrowing> ListaTareaGrowing  { get; set; } = new ObservableCollection<VMTareaGrowing>();
         public Mision()
         {
             this.InitializeComponent();
@@ -62,10 +63,11 @@ namespace BombLand
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (ListaTareaMision != null) //Carga la lista de ModelView
+            {
                 foreach (TareaMision mis in Model2.GetAllMisiones())
                 {
                     VMTareaMision VMitem = new VMTareaMision(mis);
-                    
+
                     if (VMitem.Estado == TareaMision.estados.NoTerminado)
                     {
                         VMitem.TerminadoImagen = VMitem.Vacio;
@@ -83,11 +85,35 @@ namespace BombLand
                     }
                     ListaTareaMision.Add(VMitem);
                 }
+            }
+            if (ListaTareaGrowing != null) //Carga la lista de ModelView
+            {
+                foreach (TareaGrowing mis in Model2.GetAllGrowing())
+                {
+                    VMTareaGrowing VMitem = new VMTareaGrowing(mis);
+                    if (VMitem.Estado == TareaGrowing.estados.NoTerminado)
+                    {
+                        VMitem.TerminadoImagen = VMitem.Vacio;
+                        VMitem.RecogidoImagen = VMitem.Vacio;
+                    }
+                    else if (VMitem.Estado == TareaGrowing.estados.Terminado)
+                    {
+                        VMitem.TerminadoImagen = VMitem.ImgTerminado;
+                        VMitem.RecogidoImagen = VMitem.Vacio;
+                    }
+                    else if (VMitem.Estado == TareaGrowing.estados.Recogido)
+                    {
+                        VMitem.TerminadoImagen = VMitem.ImgTerminado;
+                        VMitem.RecogidoImagen = VMitem.ImgRecogido;
+                    }
 
+                    ListaTareaGrowing.Add(VMitem);
+                }
+            }
             base.OnNavigatedTo(e);
         }
         private void MisionVolver_Click(object sender, RoutedEventArgs e) {
-            this.Frame.Navigate(typeof(MenuPrincipal));
+            this.Frame.Navigate(typeof(MenuPrincipal),Diamonds.Text);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -107,6 +133,33 @@ namespace BombLand
             }
         }
 
-     
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Button m = e.OriginalSource as Button;
+            VMTareaGrowing VMitem = m.DataContext as VMTareaGrowing;
+
+
+            if (VMitem.Estado == TareaGrowing.estados.Terminado)
+            {
+
+                VMTareaGrowing item = new VMTareaGrowing(Model2.GetAllGrowing()[VMitem.Id]);
+                item.RecogidoImagen = item.ImgRecogido;
+                ListaTareaGrowing[VMitem.Id] = item;
+                int total = Int32.Parse(Diamonds.Text) + 5;
+                Diamonds.Text = total.ToString();
+            }
+        }
+
+        private void Misionb_Click(object sender, RoutedEventArgs e)
+        {
+            MisionList.Visibility = Visibility.Visible;
+            GrowingList.Visibility = Visibility.Collapsed;
+        }
+
+        private void Growingb_Click(object sender, RoutedEventArgs e)
+        {
+            MisionList.Visibility = Visibility.Collapsed;
+            GrowingList.Visibility = Visibility.Visible;
+        }
     }
 }

@@ -26,5 +26,27 @@ namespace BombLand
         {
             this.InitializeComponent();
         }
+
+        private void Grid_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            CompositeTransform tr = JugadorIdle.RenderTransform as CompositeTransform;
+            switch (e.Key)
+            {
+                case Windows.System.VirtualKey.Left:
+                    tr.TranslateX -= 10;
+                    
+                    break;
+                case Windows.System.VirtualKey.Right:
+                    tr.TranslateX += 10;
+                    break;
+                case Windows.System.VirtualKey.Up:
+                    break;
+                case Windows.System.VirtualKey.Down:
+                    break;
+
+            }
+
+            JugadorIdle.RenderTransform = tr;
+        }
     }
 }

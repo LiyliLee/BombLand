@@ -15,13 +15,20 @@ namespace BombLand
         {
             get; set;
         }
-
-        public string ImgRecogido
+        public string ImgTarea
+        {
+            get; set;
+        }
+        public string Vacio
+        {
+            get; set;
+        }
+        public string ImgReward
         {
             get; set;
         }
 
-        public string ImgReward
+        public string ImgRecogido
         {
             get; set;
         }
@@ -33,8 +40,17 @@ namespace BombLand
         public string Descripcion
         {
             get; set;
-        } 
-       
+        }
+
+        public string RecogidoImagen
+        {
+            get; set;
+        }
+        public string TerminadoImagen
+        {
+            get; set;
+        }
+
         public estados Estado
         {
             get; set;
@@ -184,43 +200,53 @@ namespace BombLand
         public static List<TareaGrowing> Crecimientos = new List<TareaGrowing>() {
             new TareaGrowing() {
                 Id = 0,
-                ImgReward = "Assets\\armeria\\Blood Star selected.png",
-                ImgRecogido = "Assets\\armeria\\Blood Star unselected.png",
-                ImgTerminado = "Assets\\armeria\\Blood Star focus.png",
-                Estado = TareaGrowing.estados.NoTerminado,
-                Descripcion = "Defeat 1 enemy in PVE Mode"
+                ImgTarea = "Assets\\Image\\MMision\\Icons\\Ganar.png",
+                ImgReward = "Assets\\Image\\diamante.png",
+                ImgRecogido = "Assets\\Image\\PVE\\recibido.png",
+                ImgTerminado = "Assets\\Image\\MMision\\Terminado.png",
+                Vacio = "Assets\\Image\\vacio.png",
+                Estado = TareaGrowing.estados.Terminado,
+                Descripcion = "Reach level 3."
             },
             new TareaGrowing() {
                 Id = 1,
-                ImgReward = "Assets\\armeria\\Blood Star selected.png",
-                ImgRecogido = "Assets\\armeria\\Blood Star unselected.png",
-                ImgTerminado = "Assets\\armeria\\Blood Star focus.png",
-                Estado = TareaGrowing.estados.NoTerminado,
-                Descripcion = "Defeat 1 enemy in PVE Mode"
+                 ImgTarea = "Assets\\Image\\MMision\\Icons\\Ganar.png",
+                  ImgReward = "Assets\\Image\\diamante.png",
+                ImgRecogido = "Assets\\Image\\PVE\\recibido.png",
+                ImgTerminado = "Assets\\Image\\MMision\\Terminado.png",
+                Vacio = "Assets\\Image\\vacio.png",
+                Estado = TareaGrowing.estados.Terminado,
+                Descripcion = "Reach level 5."
             },
             new TareaGrowing() {
                 Id = 2,
-                ImgReward = "Assets\\armeria\\Blood Star selected.png",
-                ImgRecogido = "Assets\\armeria\\Blood Star unselected.png",
-                ImgTerminado = "Assets\\armeria\\Blood Star focus.png",
+                ImgTarea = "Assets\\Image\\MMision\\Icons\\Ganar.png",
+                  ImgReward = "Assets\\Image\\diamante.png",
+                ImgRecogido = "Assets\\Image\\PVE\\recibido.png",
+                ImgTerminado = "Assets\\Image\\MMision\\Terminado.png",
+                Vacio = "Assets\\Image\\vacio.png",
                 Estado = TareaGrowing.estados.NoTerminado,
-                Descripcion = "Defeat 1 enemy in PVE Mode"
+                Descripcion = "Reach level 10."
             },
             new TareaGrowing() {
                 Id = 3,
-                ImgReward = "Assets\\armeria\\Blood Star selected.png",
-                ImgRecogido = "Assets\\armeria\\Blood Star unselected.png",
-                ImgTerminado = "Assets\\armeria\\Blood Star focus.png",
+                ImgTarea = "Assets\\Image\\MMision\\Icons\\Ganar.png",
+                 ImgReward = "Assets\\Image\\diamante.png",
+                ImgRecogido = "Assets\\Image\\PVE\\recibido.png",
+                ImgTerminado = "Assets\\Image\\MMision\\Terminado.png",
+                Vacio = "Assets\\Image\\vacio.png",
                 Estado = TareaGrowing.estados.NoTerminado,
-                Descripcion = "Defeat 1 enemy in PVE Mode"
+               Descripcion = "Reach level 15."
             },
             new TareaGrowing() {
                 Id = 4,
-                ImgReward = "Assets\\armeria\\Blood Star selected.png",
-                ImgRecogido = "Assets\\armeria\\Blood Star unselected.png",
-                ImgTerminado = "Assets\\armeria\\Blood Star focus.png",
+                ImgTarea = "Assets\\Image\\MMision\\Icons\\Ganar.png",
+                  ImgReward = "Assets\\Image\\diamante.png",
+                ImgRecogido = "Assets\\Image\\PVE\\recibido.png",
+                ImgTerminado = "Assets\\Image\\MMision\\Terminado.png",
+                Vacio = "Assets\\Image\\vacio.png",
                 Estado = TareaGrowing.estados.NoTerminado,
-                Descripcion = "Defeat 1 enemy in PVE Mode"
+               Descripcion = "Reach level 20."
             }
 
         };

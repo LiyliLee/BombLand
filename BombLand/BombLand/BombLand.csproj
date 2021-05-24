@@ -179,6 +179,7 @@
     <Content Include="Assets\character\HatIcon.png" />
     <Content Include="Assets\character\iconGridBackground.png" />
     <Content Include="Assets\character\NoClothes.png" />
+    <Content Include="Assets\Image\diamante.png" />
     <Content Include="Assets\Image\enemigoP.png" />
     <Content Include="Assets\Image\Juego.png" />
     <Content Include="Assets\Image\MenuInicio\account.png" />

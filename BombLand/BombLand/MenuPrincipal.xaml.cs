@@ -55,7 +55,17 @@ namespace BombLand
             };
         }
 
-        private void closeMP_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+
+            if (e.Parameter is string &&
+                !string.IsNullOrWhiteSpace((string)e.Parameter))
+            {
+                Diamonds.Text = e.Parameter.ToString();
+            }
+        }
+
+            private void closeMP_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
         }

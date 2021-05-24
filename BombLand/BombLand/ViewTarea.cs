@@ -37,10 +37,13 @@ namespace BombLand
         public VMTareaGrowing(TareaGrowing tgwing)
         {
             Id = tgwing.Id;
-            string s;
             ImgRecogido = tgwing.ImgRecogido;
-            ImgReward = tgwing.ImgReward;
+            ImgTarea = tgwing.ImgTarea;
             ImgTerminado = tgwing.ImgTerminado;
+            ImgReward = tgwing.ImgReward;
+            RecogidoImagen = tgwing.ImgRecogido;
+            TerminadoImagen = tgwing.ImgTerminado;
+            Vacio = tgwing.Vacio;
             Estado = tgwing.Estado;
             Descripcion = tgwing.Descripcion;
         }
