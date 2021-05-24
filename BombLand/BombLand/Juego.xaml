@@ -32,7 +32,8 @@
                 </Button.RenderTransform>
                 <Image  Source="Assets/Image/MPrincipal/Player.png" />
             </Button>
-            <Button Grid.Column="2" VerticalAlignment="Bottom"  HorizontalAlignment="Left"  x:Name="JugadorArma" Background="Transparent" Width="150" RenderTransformOrigin="0.5,0.5">
+            <Button Grid.Column="2" VerticalAlignment="Bottom"  HorizontalAlignment="Left"  x:Name="JugadorArma" Background="Transparent" Width="150" RenderTransformOrigin="0.5,0.5"
+                    IsTabStop="False">
                 <Button.RenderTransform>
                     <CompositeTransform Rotation="-120" TranslateX="0" TranslateY="0"/>
                 </Button.RenderTransform>
@@ -40,13 +41,13 @@
 
             </Button>
 
-            <Button  VerticalAlignment="Bottom"  HorizontalAlignment="Center"  x:Name="EnemigoIdle" Background="Transparent" IsTapEnabled="False"  Width="200" RenderTransformOrigin="0.5,0.5" >
+            <Button  VerticalAlignment="Bottom"  HorizontalAlignment="Center"  x:Name="EnemigoIdle" Background="Transparent" IsTapEnabled="False" IsTabStop="False" Width="200" RenderTransformOrigin="0.5,0.5" >
                 <Button.RenderTransform>
                     <CompositeTransform Rotation="90" TranslateX="-30" TranslateY="40"/>
                 </Button.RenderTransform>
                 <Image  Source="Assets/Image/enemigoP.png" />
             </Button>
-            <Button  VerticalAlignment="Bottom"  HorizontalAlignment="Right"  x:Name="EnemigoArma" Background="Transparent" Width="150"  IsTapEnabled="False" RenderTransformOrigin="0.5,0.5" >
+            <Button  VerticalAlignment="Bottom"  HorizontalAlignment="Right"  x:Name="EnemigoArma" Background="Transparent" Width="150"  IsTapEnabled="False" IsTabStop="False" RenderTransformOrigin="0.5,0.5" >
                 <Button.RenderTransform>
                 <CompositeTransform Rotation="20" TranslateX="20" TranslateY="0"/>
                 </Button.RenderTransform>
