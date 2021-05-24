@@ -59,7 +59,7 @@
             <ColumnDefinition Width="768*"/>
         </Grid.ColumnDefinitions>
         <Image Grid.RowSpan="5" Grid.ColumnSpan="4" Source="Assets\Image\PVE\PVPfondo.png" Stretch="Fill" />
-        <Button x:Name="PVEVolver"  Background="Gray"   Click="PVEVolver_Click" HorizontalAlignment="Center"  >
+        <Button x:Name="PVEVolver" Background="Transparent" Click="PVEVolver_Click" HorizontalAlignment="Center"  >
             <Image Source="Assets\Image\MMision\botonvolver.png"  Stretch="Fill" />
         </Button>
         <Button x:Name="lv1"  Grid.Column ="1"  Grid.Row="3" Click="lv1_Click" Padding="100" HorizontalAlignment="Center" Background="Transparent" />
