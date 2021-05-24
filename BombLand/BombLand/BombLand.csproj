@@ -122,9 +122,6 @@
     <Compile Include="Armeria.xaml.cs">
       <DependentUpon>Armeria.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Crecimiento.xaml.cs">
-      <DependentUpon>Crecimiento.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Juego.xaml.cs">
       <DependentUpon>Juego.xaml</DependentUpon>
     </Compile>
@@ -227,6 +224,7 @@
     <Content Include="Assets\Image\MMision\Icons\Turno.png" />
     <Content Include="Assets\Image\MMision\Icons\Usar.png" />
     <Content Include="Assets\Image\MMision\misionb.png" />
+    <Content Include="Assets\Image\MMision\Terminado.png" />
     <Content Include="Assets\Image\MPrincipal\character.png" />
     <Content Include="Assets\Image\MPrincipal\close.png" />
     <Content Include="Assets\Image\MPrincipal\coins.png" />
@@ -248,6 +246,7 @@
     <Content Include="Assets\Image\PVP\openSlot.png" />
     <Content Include="Assets\Image\PVP\startButton.png" />
     <Content Include="Assets\Image\PVE\recibido.png" />
+    <Content Include="Assets\Image\vacio.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -263,10 +262,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Armeria.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Crecimiento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

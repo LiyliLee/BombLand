@@ -9,20 +9,40 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <DataTemplate x:Key="TareaTemplate"   >
-            <Grid HorizontalAlignment="Center">
-                <Image Source="Assets\Image\MMision\Icons\Ganar.png"  Width="100"/>
-                <TextBlock Text="Win 1 game in PVP Mode" FontSize="40"/>
-                <TextBlock Text="Reward" FontSize="40" Foreground="Goldenrod"/>
-                <Image Source="Assets\Image\MMision\Icons\Usar.png" />
-
-
+        <DataTemplate x:Key="TareaMisionTemplate"
+                      x:DataType="local:VMTareaMision"    >
+            <Grid Height="200" Width="Auto" Margin="8" Background="BlanchedAlmond">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="80" />
+                </Grid.RowDefinitions>
+                <Image Source="{x:Bind ImgTarea}" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                <Image Source="{x:Bind RecogidoImagen}" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                <Image Source="{x:Bind TerminadoImagen}" Grid.Column="0" Grid.Row="0" Width="40" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5"/>
+                <TextBlock Text="{x:Bind Descripcion}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Margin="10" TextWrapping="Wrap"/>
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="10">
+                    <TextBlock Text="Reward: " FontSize="20"  VerticalAlignment="Center" Foreground="Chocolate"/>
+                    <Image Source="{x:Bind ImgReward}"  VerticalAlignment="Center" Stretch="Uniform"/>
+                    <TextBlock Text="{x:Bind Reward}"  VerticalAlignment="Center" FontSize="20"  Foreground="Chocolate" />
+                </StackPanel>
+                <Button Grid.Column="2" Grid.RowSpan="2" Background="Transparent"  Click="Button_Click">
+                    <Grid >
+                        <Image Source="Assets\Image\MenuInicio\boton.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                        <TextBlock Text="Pick up" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Grid>
+                    
+                </Button>
+                
             </Grid>
-
         </DataTemplate>
     </Page.Resources>
 
-    <Grid Background="#FFFDF2D5">
+    <Grid Background="#FFFDF2D5"> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
@@ -34,37 +54,55 @@
         <Image  Grid.ColumnSpan="2"   Source="Assets\Image\MMision\barra.png"  Stretch="Fill"/>
 
         <Grid x:Name="BarraInfo" Grid.ColumnSpan="2"  VerticalAlignment="Center" >
-            <Button x:Name="MisionVolver"  Background="Transparent" Margin="40,0,0,0" Click="MisionVolver_Click">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="MisionVolver"  Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="MisionVolver_Click">
                 <Image Source="Assets\Image\MMision\botonvolver.png" Height="70" Width="100" Stretch="Fill"/>
             </Button>
-            <Image Source="Assets\Image\MPrincipal\coins.png"  Width="500" Margin="300,0,50,0"/>
-            <TextBlock x:Name="Coins" Text="2.601"  FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="480,40,0,0"/>
-            <TextBlock x:Name="Diamonds" Text="300" FontSize="20" Foreground="AliceBlue"  FontWeight="ExtraBold" Margin="720,40,0,0"/>
-
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1.1*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1.1*" />
+                </Grid.ColumnDefinitions>
+                <Image  Grid.ColumnSpan="4" Source="Assets\Image\MPrincipal\coins.png" Stretch="Fill" VerticalAlignment="Center" />
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="Coins" Text="2.601"  FontSize="35" Foreground="AliceBlue"  FontWeight="ExtraBold" Height="40"  />
+                <TextBlock Grid.Column="3"  x:Name="Diamonds" HorizontalAlignment="Center" VerticalAlignment="Center" Text="300" FontSize="35" Foreground="AliceBlue"  FontWeight="ExtraBold" Height="40"  />
+            </Grid>
         </Grid>
 
         <Grid  x:Name="BotonMision" Grid.Row="1" Margin="20">
-            <Image Source="Assets\Image\MMision\fondo.png" Stretch="Fill" />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Image Grid.RowSpan="3" Source="Assets\Image\MMision\fondo.png" Stretch="Fill" />
 
 
-            <Button x:Name="Misionb"  VerticalAlignment="Top" Background="Transparent" Margin="14,20,0,0" >
+            <Button x:Name="Misionb"  VerticalAlignment="Top" Background="Transparent" Margin="10" >
                 <Image Source="Assets\Image\MMision\misionb.png" />
             </Button>
-            <Button x:Name="Growingb"  VerticalAlignment="Top" Background="Transparent" Margin="20,150,20,20" >
+            <Button Grid.Row="1" x:Name="Growingb"  VerticalAlignment="Top" Background="Transparent" Margin="10"  >
                 <Image Source="Assets\Image\MMision\growingb.png" />
             </Button>
         </Grid >
 
         <Grid Grid.Row="1" Grid.Column="1" Margin=" 30" Background="#FFE2C696">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1" />
-                <ColumnDefinition Width="1" />
-                <ColumnDefinition Width="1" />
-            </Grid.ColumnDefinitions>
-            <ListView 
-                  ItemTemplate="{StaticResource TareaTemplate}" >
 
-            </ListView>
+
+            <ListView     
+                x:Name="MisionList"
+                ItemsSource="{x:Bind ListaTareaMision}"
+                ItemTemplate="{StaticResource TareaMisionTemplate}"
+             />
+
+            
+
+
 
         </Grid>
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -12,7 +13,9 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,6 +30,7 @@ namespace BombLand
         private List<Gamepad> myGamepads = new List<Gamepad>();
         private Gamepad mainGamepad = null;
 
+        public ObservableCollection<VMTareaMision> ListaTareaMision  { get; set; } = new ObservableCollection<VMTareaMision>();
         public Mision()
         {
             this.InitializeComponent();
@@ -55,8 +59,54 @@ namespace BombLand
             };
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (ListaTareaMision != null) //Carga la lista de ModelView
+                foreach (TareaMision mis in Model2.GetAllMisiones())
+                {
+                    VMTareaMision VMitem = new VMTareaMision(mis);
+                    
+                    if (VMitem.Estado == TareaMision.estados.NoTerminado)
+                    {
+                        VMitem.TerminadoImagen = VMitem.Vacio;
+                        VMitem.RecogidoImagen = VMitem.Vacio;
+                    }
+                    else if (VMitem.Estado == TareaMision.estados.Terminado)
+                    {
+                        VMitem.TerminadoImagen = VMitem.ImgTerminado;
+                        VMitem.RecogidoImagen = VMitem.Vacio;
+                    }
+                    else if (VMitem.Estado == TareaMision.estados.Recogido)
+                    {
+                        VMitem.TerminadoImagen = VMitem.ImgTerminado;
+                        VMitem.RecogidoImagen = VMitem.ImgRecogido;
+                    }
+                    ListaTareaMision.Add(VMitem);
+                }
+
+            base.OnNavigatedTo(e);
+        }
         private void MisionVolver_Click(object sender, RoutedEventArgs e) {
             this.Frame.Navigate(typeof(MenuPrincipal));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            Button m = e.OriginalSource as Button;
+            VMTareaMision VMitem = m.DataContext as VMTareaMision;
+ 
+            
+            if (VMitem.Estado == TareaMision.estados.Terminado)
+            {
+                
+                VMTareaMision item = new VMTareaMision(Model2.GetAllMisiones()[VMitem.Id]);
+                item.RecogidoImagen = item.ImgRecogido;
+                ListaTareaMision[VMitem.Id] = item;
+
+            }
+        }
+
+     
     }
 }
