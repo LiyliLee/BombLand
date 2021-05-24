@@ -8,10 +8,10 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Image Source="Assets/Image/Juego.png" Stretch="Fill"/>
+    <Grid  KeyDown="Grid_KeyDown">
+        <Image Source="Assets/Image/Juego.png" Stretch="Fill"  KeyDown="Grid_KeyDown"/>
 
-        <Grid KeyDown="Grid_KeyDown">
+        <Grid  KeyDown="Grid_KeyDown">
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition  Width="1*"/>
@@ -21,32 +21,34 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="2" HorizontalAlignment="Center"  x:Name="JugadorIdle" Background="Transparent"  Width="170" RenderTransformOrigin="0.5,0.5" >
+            <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click" Margin="20" Background="Transparent">
+                <Image Source="Assets\Image\MMision\botonvolver.png"/>
+            </Button>
+            <Button Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center"  x:Name="JugadorIdle" Background="Transparent"  Width="170" RenderTransformOrigin="0.5,0.5" >
                 <Button.RenderTransform>
                     <CompositeTransform Rotation="-90" TranslateX="30" TranslateY="40"/>
                 </Button.RenderTransform>
                 <Image  Source="Assets/Image/MPrincipal/Player.png" />
             </Button>
-            <Button Grid.Column="2" HorizontalAlignment="Left"  x:Name="JugadorArma" Background="Transparent" Width="150" RenderTransformOrigin="0.5,0.5">
+            <Button Grid.Column="2" VerticalAlignment="Bottom"  HorizontalAlignment="Left"  x:Name="JugadorArma" Background="Transparent" Width="150" RenderTransformOrigin="0.5,0.5">
                 <Button.RenderTransform>
-                    <CompositeTransform Rotation="-120" TranslateX="0" TranslateY="30"/>
+                    <CompositeTransform Rotation="-120" TranslateX="0" TranslateY="0"/>
                 </Button.RenderTransform>
                 <Image  Source="Assets/Image/MPrincipal/weapon.png"   />
 
             </Button>
 
-            <Button  HorizontalAlignment="Center"  x:Name="EnemigoIdle" Background="Transparent"  Width="200" RenderTransformOrigin="0.5,0.5" >
+            <Button  VerticalAlignment="Bottom"  HorizontalAlignment="Center"  x:Name="EnemigoIdle" Background="Transparent" IsTapEnabled="False"  Width="200" RenderTransformOrigin="0.5,0.5" >
                 <Button.RenderTransform>
                     <CompositeTransform Rotation="90" TranslateX="-30" TranslateY="40"/>
                 </Button.RenderTransform>
                 <Image  Source="Assets/Image/enemigoP.png" />
             </Button>
-            <Button  HorizontalAlignment="Right"  x:Name="EnemigoArma" Background="Transparent" Width="150" RenderTransformOrigin="0.5,0.5" >
+            <Button  VerticalAlignment="Bottom"  HorizontalAlignment="Right"  x:Name="EnemigoArma" Background="Transparent" Width="150"  IsTapEnabled="False" RenderTransformOrigin="0.5,0.5" >
                 <Button.RenderTransform>
-                <CompositeTransform Rotation="20" TranslateX="20" TranslateY="30"/>
+                <CompositeTransform Rotation="20" TranslateX="20" TranslateY="0"/>
                 </Button.RenderTransform>
                 <Image  Source="Assets/Image/MPrincipal/weapon.png"  />
 
