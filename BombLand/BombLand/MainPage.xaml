@@ -93,7 +93,7 @@
                 </Grid>
             </Button>
         </Grid>
-        <Grid Grid.RowSpan="2" x:Name="PanelCredits"  Visibility="Collapsed" Margin="20" >
+        <Grid Grid.RowSpan="2" x:Name="PanelCredits"  Visibility="Collapsed" Margin="20" HorizontalAlignment="Center" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="3*" />
@@ -101,6 +101,7 @@
             </Grid.RowDefinitions>
             <Image Grid.RowSpan="3" Source="Assets\Image\MenuInicio\Cuadro.png"  Stretch="Fill" />
             <TextBlock  Grid.Row="0" x:Name="creditsText" Text="Credits" Foreground="Beige" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="1" Text="Juego creado por Liyuan Li y Pablo Sánchez Cuadrado" TextWrapping="Wrap" FontSize="30" HorizontalAlignment="Center" HorizontalTextAlignment="Center" VerticalAlignment="Center"/>
             <Button Grid.Row="2" x:Name="CloseCredits" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Background="Transparent" Click="CloseCredits_Click" >
                 <Grid>
                     <Grid.ColumnDefinitions>
