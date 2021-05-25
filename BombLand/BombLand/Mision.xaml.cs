@@ -144,6 +144,7 @@ namespace BombLand
 
                 VMTareaGrowing item = new VMTareaGrowing(Model2.GetAllGrowing()[VMitem.Id]);
                 item.RecogidoImagen = item.ImgRecogido;
+                item.Estado = TareaGrowing.estados.Recogido;
                 ListaTareaGrowing[VMitem.Id] = item;
                 int total = Int32.Parse(Diamonds.Text) + 5;
                 Diamonds.Text = total.ToString();
